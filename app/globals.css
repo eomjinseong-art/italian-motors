@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+:root {
+  --paper: #f6f1ea;
+  --ink: #1c1210;
+  --muted: #5c534c;
+  --accent: #9e1b32;
+  --accent-soft: #7d1428;
+  --on-accent: #fff8f4;
+  --gold: #b08d3e;
+  --card: #fffdf9;
+  --line: #e6dcd0;
+  --hero: #14080b;
+  --hero-ink: #f8f1ea;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #120c0d;
+    --ink: #f6efe8;
+    --muted: #b6a79e;
+    --accent: #f0b4be;
+    --accent-soft: #c46b78;
+    --on-accent: #1a0c10;
+    --gold: #d4b56a;
+    --card: #1c1415;
+    --line: #3a2c2e;
+    --hero: #070405;
+    --hero-ink: #f6efe8;
+  }
+}
+
+@theme inline {
+  --color-paper: var(--paper);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-accent-soft: var(--accent-soft);
+  --color-on-accent: var(--on-accent);
+  --color-gold: var(--gold);
+  --color-card: var(--card);
+  --color-line: var(--line);
+  --color-hero: var(--hero);
+  --color-hero-ink: var(--hero-ink);
+  --font-sans: var(--font-noto-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-noto-serif), ui-serif, Georgia, serif;
+}
+
+html {
+  overflow-x: hidden;
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-noto-sans), ui-sans-serif, system-ui, sans-serif;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--accent) 28%, transparent);
+}
