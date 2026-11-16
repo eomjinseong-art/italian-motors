@@ -2,6 +2,7 @@ import Link from "next/link";
 import { JsonLd } from "@/components/JsonLd";
 import { brands, models } from "@/lib/catalog";
 import { pageMetadata, SITE_URL } from "@/lib/site";
+import { CoupangCard } from "@/components/CoupangCard";
 
 export const metadata = pageMetadata({
   title: "브랜드",
@@ -32,8 +33,10 @@ export default function BrandsPage() {
           네임플레이트를 모았습니다.
         </p>
       </header>
-      <div className="grid gap-4">
-        {brands.map((brand) => (
+      {(() => {
+        const mid = Math.min(9, Math.max(1, Math.floor(brands.length / 2)));
+        const item = (brand: (typeof brands)[number]) => (
+
           <Link key={brand.slug} href={`/brands/${brand.slug}`} className="rounded-2xl border border-line bg-card p-5 hover:border-accent">
             <div className="flex flex-wrap items-baseline justify-between gap-2">
               <h2 className="font-serif text-2xl">{brand.nameKo}</h2>
@@ -43,8 +46,20 @@ export default function BrandsPage() {
             <p className="mt-2 text-sm leading-relaxed text-muted">{brand.summary}</p>
             <p className="mt-3 text-xs text-muted">모델 {models.filter((model) => model.brand === brand.slug).length}개</p>
           </Link>
-        ))}
-      </div>
+        
+        );
+        return (
+          <>
+            <div className="grid gap-4">
+              {brands.slice(0, mid).map(item)}
+            </div>
+            <CoupangCard />
+            <div className="mt-4 grid gap-4">
+              {brands.slice(mid).map(item)}
+            </div>
+          </>
+        );
+      })()}
     </main>
   );
 }
