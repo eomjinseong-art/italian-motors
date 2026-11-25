@@ -15,6 +15,7 @@ export const PARTS_ORIGIN = "https://car-parts-cpang.vercel.app";
 
 export const BRITISH_MOTORS_URL = "https://british-motors.vercel.app";
 export const USA_MOTORS_URL = "https://usa-motors.vercel.app";
+export const LONGRENT_GUIDE_URL = "https://longrent-guide.vercel.app/?utm_source=italian-motors&utm_medium=footer&utm_campaign=car-network";
 export const NADOO_GARAGE_URL = "https://nadoo-garage.vercel.app";
 export const BOND_ARCHIVE_URL = "https://bond-archive-two.vercel.app";
 export const FF_ARCHIVE_URL = "https://ff-archive.vercel.app";
