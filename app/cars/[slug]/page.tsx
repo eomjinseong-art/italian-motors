@@ -1,3 +1,4 @@
+import { NadooAd } from "@/components/NadooAd";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -132,6 +133,7 @@ export default async function ModelPage({ params }: { params: Promise<Params> })
           ))}
         </div>
       </section>
+      <NadooAd inline />
       <section className="mt-10 max-w-3xl">
         <h2 className="font-serif text-xl">디자인</h2>
         <div className="mt-3 space-y-4 leading-relaxed">
